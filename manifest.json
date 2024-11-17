@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Dark Mode Everywhere",
+  "version": "1.0",
+  "description": "Turns all websites into dark mode.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_title": "Toggle Dark Mode"
+  }
+}
